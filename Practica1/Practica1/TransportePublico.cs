@@ -9,13 +9,20 @@ namespace Practica1
 {
     public abstract class TransportePublico
     {
+        private int _id;
         private int _pasajeros;
 
-        public TransportePublico(int _pasajeros) 
+        public TransportePublico(int _id, int _pasajeros) 
         {
+            this._id = _id;
             this._pasajeros = _pasajeros;
         }
 
+        public int Id
+        {
+            set { this._id = value; }
+            get { return _id; }
+        }
         public int Pasajeros
         {
             set { this._pasajeros = value; }

@@ -8,7 +8,7 @@ namespace Practica1
 {
     internal class Omnibus : TransportePublico
     {
-        public Omnibus(int pasajeros) : base(pasajeros)
+        public Omnibus(int _id, int _pasajeros) : base(_id, _pasajeros)
         {
         }
 

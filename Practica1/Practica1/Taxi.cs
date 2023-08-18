@@ -8,7 +8,7 @@ namespace Practica1
 {
     internal class Taxi : TransportePublico
     {
-        public Taxi(int pasajeros) : base(pasajeros)
+        public Taxi(int _id, int _pasajeros) : base(_id, _pasajeros)
         {
         }
 
