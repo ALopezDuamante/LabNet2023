@@ -36,7 +36,7 @@ namespace Practica3
                             if (opcionconsulta == "1")//Consulta Shippers
                             {
                                 Console.Clear();
-                                Console.WriteLine("Shippers:");
+                                Console.WriteLine("Shippers:\n");
                                 foreach (Shippers shipper in shippersLogic.GetAll())
                                 {
                                     Console.WriteLine($"ID: {shipper.ShipperID} - " +
@@ -48,7 +48,7 @@ namespace Practica3
                             else if (opcionconsulta == "2")//Consulta Suppliers
                             {
                                 Console.Clear();
-                                Console.WriteLine("Suppliers:");
+                                Console.WriteLine("Suppliers:\n");
                                 foreach (Suppliers supplier in suppliersLogic.GetAll())
                                 {
                                     Console.WriteLine($"ID: {supplier.SupplierID} - " +
@@ -62,7 +62,7 @@ namespace Practica3
                             {
                                 Console.WriteLine(opcionincorrecta);
                             }
-                            Console.WriteLine("Presione Enter para volver al menu de consultas...");
+                            Console.WriteLine("\nPresione Enter para volver al menu de consultas...");
                             Console.ReadLine();
                             Console.Clear() ;
 
@@ -101,7 +101,7 @@ namespace Practica3
                             {
                                 Console.WriteLine(opcionincorrecta);
                             }
-                            Console.WriteLine("Presione Enter para volver al menú de agregación...");
+                            Console.WriteLine("\nPresione Enter para volver al menú de agregación...");
                             Console.ReadLine();
                             Console.Clear();
 
