@@ -22,13 +22,20 @@ namespace Practica3.Logic
 
         public void Delete(int id)
         {
-            //Falta lograr eliminar Order Detail para que se pueda eliminar el Supplier
-            var objetoEliminar = context.Suppliers.Find(id);
-            if (objetoEliminar != null)
+            var eliminarSupplier = context.Suppliers.Find(id);
+            if (eliminarSupplier != null)
             {
-                context.Products.RemoveRange(objetoEliminar.Products);
-                context.Suppliers.Remove(objetoEliminar);
-            }       
+                var eliminarProduct = context.Products.Where(p => p.SupplierID == id).ToList();
+
+                foreach (var product in eliminarProduct)
+                {
+                    context.Order_Details.RemoveRange(product.Order_Details);
+                    context.Products.Remove(product);
+                }
+                context.SaveChanges();
+
+                context.Suppliers.Remove(eliminarSupplier);
+            }
 
             context.SaveChanges();
 

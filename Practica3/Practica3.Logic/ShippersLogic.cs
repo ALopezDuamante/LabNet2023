@@ -16,8 +16,20 @@ namespace Practica3.Logic
 
         public void Delete(int id)
         {
-            var objetoEliminar = context.Shippers.Find(id);
-            context.Shippers.Remove(objetoEliminar);
+            var eliminarShipper = context.Shippers.Find(id);
+            if (eliminarShipper != null)
+            {
+                var eliminarOrden = context.Orders.Where( o => o.ShipVia == id).ToList();
+
+                foreach ( var orden in eliminarOrden)
+                {
+                    context.Order_Details.RemoveRange(orden.Order_Details);
+                    context.Orders.Remove(orden);
+                }
+                context.SaveChanges();
+
+                context.Shippers.Remove(eliminarShipper);
+            }
             
 
             context.SaveChanges();

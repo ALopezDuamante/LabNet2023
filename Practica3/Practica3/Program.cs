@@ -21,7 +21,6 @@ namespace Practica3
             string menueliminar = "Menú de eliminación\n\nSeleccione una opción:\n1 - Eliminar Shipper\n2 - Eliminar Supplier\n0 - Volver al menú principal";
             string menuactualizar = "Menú de actualizaciones\n\nSeleccione una opción:\n1 - Actualizar Shipper\n2 - Actualizar Supplier\n0 - Volver al menú principal";
             SuppliersLogic suppliersLogic = new SuppliersLogic();
-            OrdersLogic ordersLogic = new OrdersLogic();
             ShippersLogic shippersLogic = new ShippersLogic();
             Console.WriteLine(menuprincipal);
             opcionmenu = Console.ReadLine();
@@ -182,7 +181,7 @@ namespace Practica3
                                     Console.Clear();
                                     if (suppliersLogic.GetById(num) != null)
                                     {
-                                        Console.WriteLine("Se eliminará el siguiente Shipper:");
+                                        Console.WriteLine("Se eliminará el siguiente Supplier:");
                                         Console.WriteLine($"Nombre de la Compañia: {suppliersLogic.GetById(num).CompanyName} - Telefono: {suppliersLogic.GetById(num).Phone}");
                                         Console.WriteLine("\nPresione 1 Para aceptar:");
                                         var confirmar = Console.ReadLine();
