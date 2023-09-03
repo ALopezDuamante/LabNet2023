@@ -1,30 +1,26 @@
-namespace Practica4.Data
+namespace Practica4.Entities
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    public partial class Shippers
+    [Table("Region")]
+    public partial class Region
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Shippers()
+        public Region()
         {
-            Orders = new HashSet<Orders>();
+            Territories = new HashSet<Territories>();
         }
 
-        [Key]
-        public int ShipperID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int RegionID { get; set; }
 
         [Required]
-        [StringLength(40)]
-        public string CompanyName { get; set; }
-
-        [StringLength(24)]
-        public string Phone { get; set; }
+        [StringLength(50)]
+        public string RegionDescription { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Territories> Territories { get; set; }
     }
 }
