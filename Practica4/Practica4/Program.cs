@@ -31,9 +31,9 @@ namespace Practica4
                     case "1"://Punto 1
                         Console.Clear();
                         Console.WriteLine("Query 1\nIngrese ID del objeto Customer que desee mostrar:");
-                        string traerCustomerId = Console.ReadLine();
+                        string traerCustomer = Console.ReadLine();
 
-                        var query1 = db.Customers.Where(c => c.CustomerID == traerCustomerId).FirstOrDefault();
+                        var query1 = db.Customers.FirstOrDefault(c => c.CustomerID == traerCustomer);
 
                         if (query1 != null)
                         {
@@ -124,7 +124,25 @@ namespace Practica4
                         break;
 
                     case "5"://Punto 5
+                        Console.Clear();
                         Console.WriteLine("Query 5");
+
+                        var query5 = db.Products.FirstOrDefault(p => p.ProductID == 789);
+
+                        if (query5 != null)
+                        {
+                            Console.WriteLine("\nProducto con ID = 789:");
+                            Console.WriteLine($"Nombre del Producto: {query5.ProductName} | " +
+                                $"Stock: {query5.UnitsInStock} | " +
+                                $"Precio por Unidad: {query5.UnitPrice}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("nulo");
+                        }
+
+                        Console.WriteLine("\nPresione Enter para volver al menú principal...");
+                        Console.ReadLine();
                         break;
 
                     case "6"://Punto 6
@@ -184,7 +202,7 @@ namespace Practica4
                     case "0":
 
                         Console.Clear() ;
-                        Console.WriteLine("Saliendo del programa...");
+                        Console.WriteLine("Saliendo del programa.");
                         break;
 
                     default:
@@ -196,6 +214,7 @@ namespace Practica4
 
             } while (opcion != "0");
 
+            Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
         }
     }
