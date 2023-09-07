@@ -14,6 +14,7 @@ const showScore = document.getElementById("showScore");
 const tryList = document.getElementById("tryList");
 const numberToGuess = document.getElementById("numberToGuess");
 const gameOver = document.getElementById("gameOver");
+const alert = document.getElementById("alert");
 
 let random = Math.ceil((Math.random()*20));
 let maxScore = 0;
@@ -22,9 +23,8 @@ let actualScore = 5;
 showScore.textContent = actualScore;
 
 startButton.addEventListener("click", function(){
-    console.log(random);
     mainView.style.display = "none";
-    gameView.style.display = "block";
+    gameView.style.display = "grid";
     highscore.textContent = maxScore;
 })
 
@@ -42,33 +42,41 @@ newGameButton.addEventListener("click", function(){
 submitButton.addEventListener("click", function(){
     const tryValue = numberTry.value;
     const li = document.createElement("li");
-    if(tryValue == random){
-        if (maxScore < actualScore){
-            maxScore = actualScore;
-            
+    alert.textContent = "";
+    if(tryValue!=""){
+        if(tryValue == random){
+            if (maxScore < actualScore){
+                maxScore = actualScore;
+                
+            }
+            gameLabel.style.display = "none";
+            endLabel.style.display = "block";
+            gameOver.textContent = "Ganaste";
+            gameOver.style.color = "green";
+            highscore.textContent = maxScore;
+            numberToGuess.textContent = random;   
         }
-        gameLabel.style.display = "none";
-        endLabel.style.display = "block";
-        gameOver.textContent = "Ganaste";
-        highscore.textContent = maxScore;
-        numberToGuess.textContent = random;   
-    }
-    if(tryValue < random){;
-        actualScore--;
-        li.textContent = tryValue + " - Muy bajo";
-        tryList.appendChild(li);
-    }
-    if(tryValue > random){
-        actualScore--
-        li.textContent = tryValue + " - Muy alto";
-        tryList.appendChild(li);
+        if(tryValue < random){;
+            actualScore--;
+            li.textContent = tryValue + " - Muy bajo";
+            tryList.appendChild(li);
+        }
+        if(tryValue > random){
+            actualScore--;
+            li.textContent = tryValue + " - Muy alto";
+            tryList.appendChild(li);
 
+        }
+        if(actualScore == 0){
+            gameLabel.style.display = "none";
+            endLabel.style.display = "block";
+            gameOver.textContent = "Perdiste";
+            gameOver.style.color = "red";
+            numberToGuess.textContent = random;
+        }
     }
-    if(actualScore == 0){
-        gameLabel.style.display = "none";
-        endLabel.style.display = "block";
-        gameOver.textContent = "Perdiste";
-        numberToGuess.textContent = random;
+    else{
+        alert.textContent = " Asegurese de ingresar un numero!";
     }
     showScore.textContent = actualScore;
 })

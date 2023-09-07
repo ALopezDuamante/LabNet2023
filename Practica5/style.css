@@ -1,0 +1,75 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+body{
+    background-color: #373739;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.mainView{
+    display: grid;
+    place-items: center;
+}
+
+.gameView{
+    display: grid;
+    place-items: center;
+}
+
+h1, h3{
+    color: #84b6f4;
+}
+
+.gameOver{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.newGameButton{
+    width: 9rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.newGameButton:hover{
+    background-color: rgb(189, 189, 189);
+}
+
+.startButton{
+    width: 9rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: medium;
+    background-color:aliceblue;
+
+}
+.startButton:hover{
+    background-color: rgb(189, 189, 189);
+
+}
+.submitButton{
+    width: 6rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: bolder;
+}
+.submitButton:hover{
+    background-color: rgb(189, 189, 189);
+}
+
+.numberTry{
+    width: 112px;
+    height: 30px;
+    border-radius: 8px;
+}
