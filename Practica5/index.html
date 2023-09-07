@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Juego de Adivinacion</title>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="mainView" style="display: block;">
+        <h1>Juego de Adivinacion</h1>
+        <p>Bienvenido al juego de Adivinacion</p>
+        <h3>Reglas:</h3>
+        <p>Voy a pensar un numero de 1 a 20, para ganar hay que adivinarlo. Tenes 5 intentos y te voy a dar una ayuda por cada error</p>
+        <h3>Buena suerte!</h3>
+        <button id="startButton">Comenzar a jugar</button>
+    </div>
+
+    <div id="gameView" style="display: none;">
+        <h1>Juego de Adivinacion</h1>
+        <p>Highscore: <span id="highscore"></span></p>
+
+        <label id="gameLabel" style="display: block;">
+            <p>Comienza el juego (recuerda que el numero es de 1 a 20 inclusive)</p>
+            <input type"number" id="numberTry" placeholder="Ingrese un numero">
+            <button id="submitButton">Enviar</button>
+            <p>Score: <span id="showScore"></span></p>
+        </label><br />
+
+        <label id="endLabel" style="display: none;">
+            <span id="gameOver"></span>
+            <p>El numero era: <span id="numberToGuess"></span></p>
+            <button id="newGameButton">Jugar de nuevo</button>
+        </label>
+
+        <p>Tus intentos: </p>
+        <ul id="tryList"></ul>
+    </div>
+
+</body>
