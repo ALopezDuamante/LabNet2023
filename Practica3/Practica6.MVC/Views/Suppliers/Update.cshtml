@@ -1,0 +1,47 @@
+﻿@model Practica6.MVC.Models.SuppliersView
+
+@{
+    ViewBag.Title = "Suppliers Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Suppliers</title>
+</head>
+<body>
+    <h1>Listado de Suppliers</h1>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre actual</th>
+                    <th scope="col">Nombre de Contacto actual</th>
+                    <th scope="col">Telefono actual</th>
+                </tr>
+            </thead>
+            <tbody>
+            <td>@Model.CompanyName</td>
+            <td>@Model.ContactName</td>
+            <td>@Model.Phone</td>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        @using (Html.BeginForm("Update", "Suppliers", FormMethod.Post))
+        {
+            <label>Nombre nuevo: </label>
+            @Html.TextBoxFor(r => r.CompanyName)
+            <label>Nombre de Contacto nuevo: </label>
+            @Html.TextBoxFor(r => r.ContactName)
+            <label>Telefono nuevo: </label>
+            @Html.TextBoxFor(r => r.Phone)
+            <input type="submit" class="btn-success" value="Guardar" />
+            <button>@Html.ActionLink("Cancelar", "Index")</button>
+
+        }
+    </div>
+</body>
+</html>

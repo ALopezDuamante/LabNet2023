@@ -1,0 +1,16 @@
+﻿@model Practica6.MVC.Models.SuppliersView
+
+@{
+    ViewBag.Title = "Suppliers Page";
+}
+
+<h2>Insert Supplier</h2>
+
+@using (Html.BeginForm("Insert", "Suppliers", FormMethod.Post))
+{
+    <label>Nombre: </label>@Html.TextBoxFor(r => r.CompanyName)
+    <label>Nombre de Contacto: </label>@Html.TextBoxFor(r => r.ContactName)
+    <label>Telefono: </label>@Html.TextBoxFor(r => r.Phone)
+    <input type="submit" class="btn-success" value="Guardar" />
+    <button>@Html.ActionLink("Cancelar", "Index")</button>
+}

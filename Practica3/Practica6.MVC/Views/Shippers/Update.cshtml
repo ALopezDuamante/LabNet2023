@@ -1,0 +1,43 @@
+﻿@model Practica6.MVC.Models.ShippersView
+
+@{
+    ViewBag.Title = "Shippers Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Shippers</title>
+</head>
+<body>
+    <h1>Listado de Shippers</h1>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre actual</th>
+                    <th scope="col">Telefono actual</th>
+                </tr>
+            </thead>
+            <tbody>
+            <td>@Model.CompanyName</td>
+            <td>@Model.Phone</td>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        @using (Html.BeginForm("Update", "Shippers", FormMethod.Post))
+        {
+            <label>Nombre nuevo: </label>
+            @Html.TextBoxFor(r => r.CompanyName)
+            <label>Telefono nuevo: </label>
+            @Html.TextBoxFor(r => r.Phone)
+            <input type="submit" class="btn-success" value="Guardar" />
+            <button>@Html.ActionLink("Cancelar", "Index")</button>
+
+        }
+    </div>
+</body>
+</html>

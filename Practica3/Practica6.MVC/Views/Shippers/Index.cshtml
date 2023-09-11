@@ -1,0 +1,44 @@
+﻿@model List< Practica6.MVC.Models.ShippersView >
+
+@{
+    ViewBag.Title = "Shippers Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Shippers</title>
+</head>
+<body>
+    <h1>Listado de Shippers</h1>
+    <div>
+        @Html.ActionLink("Agregar Shipper", "Insert")
+    </div>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre de Compañía</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var shipper in Model)
+                {
+                    <tr>
+                        <td>@shipper.CompanyName</td>
+                        <td>@shipper.Phone</td>
+                        <th>@Html.ActionLink("Editar", "Update", new { id = shipper.Id })</th>
+                        <th>@Html.ActionLink("Borrar", "Delete", new { id = shipper.Id }, new { onclick = "return confirm('Está seguro? No podrá revertir el cambio')" })</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -44,8 +44,12 @@ namespace Practica3.Logic
         public void Update(Suppliers updateObject)
         {
             var actualizarsupplier = context.Suppliers.Find(updateObject.SupplierID);
-            actualizarsupplier.CompanyName = updateObject.CompanyName;
-            actualizarsupplier.Phone = updateObject.Phone;
+            if (actualizarsupplier != null)
+            {
+                actualizarsupplier.CompanyName = updateObject.CompanyName;
+                actualizarsupplier.ContactName = updateObject.ContactName;
+                actualizarsupplier.Phone = updateObject.Phone;
+            }
 
             context.SaveChanges();
         }

@@ -1,0 +1,41 @@
+﻿@model List<Practica6.MVC.Models.SuppliersView>
+
+@{
+    ViewBag.Title = "Suppliers Page";
+}
+
+
+<body>
+    <h1>Listado de Suppliers</h1>
+    <div>
+        @Html.ActionLink("Agregar Supplier", "Insert")
+    </div>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre de Compañía</th>
+                    <th scope="col">Nombre de Contacto</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var supplier in Model)
+                {
+                    <tr>
+                        <td>@supplier.CompanyName</td>
+                        <td>@supplier.ContactName</td>
+                        <td>@supplier.Phone</td>
+                        <th>@Html.ActionLink("Editar", "Update", new { id = supplier.Id })</th>
+                        <th>@Html.ActionLink("Borrar", "Delete", new { id = supplier.Id }, new { onclick = "return confirm('Está seguro? No podrá revertir el cambio')" })</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
