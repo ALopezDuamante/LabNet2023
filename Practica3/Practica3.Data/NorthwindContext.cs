@@ -1,7 +1,7 @@
-using Practica3.Entities;
+using Practica7.Entities;
 using System.Data.Entity;
 
-namespace Practica3.Data
+namespace Practica7.Data
 {
     public partial class NorthwindContext : DbContext
     {

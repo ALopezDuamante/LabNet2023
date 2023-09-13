@@ -1,18 +1,17 @@
-﻿using Practica3.Entities;
-using Practica3.Logic;
-using Practica6.MVC.Models;
+﻿using Practica7.Entities;
+using Practica7.Logic;
+using Practica7.MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Practica6.MVC.Controllers
+namespace Practica7.MVC.Controllers
 {
     public class ShippersController : Controller
     {
         ShippersLogic logic = new ShippersLogic();
 
-        // GET: Shippers
         public ActionResult Index()
         {
             List<Shippers> shippers = logic.GetAll();

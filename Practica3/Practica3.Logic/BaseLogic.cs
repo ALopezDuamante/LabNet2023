@@ -1,11 +1,6 @@
-﻿using Practica3.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Practica7.Data;
 
-namespace Practica3.Logic
+namespace Practica7.Logic
 {
     public abstract class BaseLogic
     {

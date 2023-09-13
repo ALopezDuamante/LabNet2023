@@ -2,7 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Practica6.MVC
+namespace Practica7.MVC
 {
     public class MvcApplication : System.Web.HttpApplication
     {

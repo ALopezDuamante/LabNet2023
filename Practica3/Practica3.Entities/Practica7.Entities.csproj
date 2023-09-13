@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5F61755-E09B-44B7-8AD7-BF903ED60774}</ProjectGuid>
+    <ProjectGuid>{34E07647-E027-4373-8861-2CD3936318B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Practica3.Logic</RootNamespace>
-    <AssemblyName>Practica3.Logic</AssemblyName>
+    <RootNamespace>Practica3.Entities</RootNamespace>
+    <AssemblyName>Practica3.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,25 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseLogic.cs" />
-    <Compile Include="IBaseLogic.cs" />
+    <Compile Include="Categories.cs" />
+    <Compile Include="CustomerDemographics.cs" />
+    <Compile Include="Customers.cs" />
+    <Compile Include="Employees.cs" />
+    <Compile Include="Orders.cs" />
+    <Compile Include="Order_Details.cs" />
+    <Compile Include="Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShippersLogic.cs" />
-    <Compile Include="SuppliersLogic.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="Shippers.cs" />
+    <Compile Include="Suppliers.cs" />
+    <Compile Include="Territories.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Practica3.Data\Practica6.Data.csproj">
-      <Project>{1DD214DC-CF3F-496F-A0DF-7F3B06675ECC}</Project>
-      <Name>Practica6.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Practica3.Entities\Practica6.Entities.csproj">
-      <Project>{34E07647-E027-4373-8861-2CD3936318B6}</Project>
-      <Name>Practica6.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

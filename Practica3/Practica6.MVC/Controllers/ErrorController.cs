@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Practica6.MVC.Controllers
+namespace Practica7.MVC.Controllers
 {
     public class ErrorController : Controller
     {

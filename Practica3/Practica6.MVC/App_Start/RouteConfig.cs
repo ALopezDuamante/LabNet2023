@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Practica6.MVC
+namespace Practica7.MVC
 {
     public class RouteConfig
     {
@@ -18,6 +18,13 @@ namespace Practica6.MVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Swapi",
+                url: "Swapi/{id}",
+                defaults: new { controller = "Swapi", action = "Index", id = UrlParameter.Optional }
+            );
         }
+
     }
 }

@@ -1,8 +1,8 @@
-﻿using Practica3.Entities;
+﻿using Practica7.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Practica3.Logic
+namespace Practica7.Logic
 {
     public class ShippersLogic : BaseLogic, IBaseLogic<Shippers>
     {

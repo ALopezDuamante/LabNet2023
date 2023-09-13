@@ -1,10 +1,10 @@
-﻿using Practica3.Entities;
+﻿using Practica7.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
-namespace Practica3.Logic
+namespace Practica7.Logic
 {
     public class SuppliersLogic : BaseLogic, IBaseLogic<Suppliers>
     {

@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace Practica6.MVC
+namespace Practica7.MVC
 {
     public class BundleConfig
     {

@@ -1,0 +1,25 @@
+﻿@model List<Practica7.MVC.Models.CharacterView>
+
+@{
+    ViewBag.Title = "Swapi";
+}
+
+
+<body>
+    <h2>Star Wars Api</h2><br />
+    <div>
+        <h4>Detalles de Personajes</h4>
+        <ul>
+            @foreach (var character in Model)
+            {
+
+                <li><strong>Nombre:</strong> @character.CharacterName</li>
+                <li><strong>Genero:</strong> @character.Gender</li>
+                <li><strong>Altura:</strong> @character.Height cm</li>
+                <li><strong>Peso:</strong> @character.Mass kg</li>
+                <li><strong>Año de Nacimiento:</strong> @character.BirthYear</li>
+                <br />
+            }
+        </ul>
+    </div>
+</body>
