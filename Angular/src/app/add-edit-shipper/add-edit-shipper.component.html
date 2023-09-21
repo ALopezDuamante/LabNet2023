@@ -1,0 +1,22 @@
+<div mat-dialog-title>
+    <h1>{{data ? 'Update Shipper': 'Add Shipper'}}</h1>
+</div>
+<form [formGroup]="shipperForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content>
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Company Name</mat-label>
+                <input matInput type="text" formControlName="CompanyName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Phone</mat-label>
+                <input matInput type="tel" formControlName="Phone">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div mat-dialog-actions class="action">
+        <button type="submit" class="btn btn-success" [disabled]="shipperForm.invalid">{{data ? 'Update': 'Save'}}</button>
+        <button type="button" class="btn btn-danger" [mat-dialog-close]="false">Cancel</button>
+    </div>
+</form>

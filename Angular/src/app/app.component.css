@@ -1,0 +1,20 @@
+.table-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+}
+
+th:nth-child(4) {
+  text-align: right;
+}
+
+.button-add-container {
+  text-align: right;
+}
+
+.button-container {
+  text-align: right;
+}

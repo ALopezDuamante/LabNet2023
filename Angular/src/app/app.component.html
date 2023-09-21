@@ -1,0 +1,44 @@
+<p>
+    <mat-toolbar color="primary">
+        <span>Practica 8 - Angular</span>
+    </mat-toolbar>
+</p>
+
+
+<div class="table-container">
+    <h2>Shipper's administration</h2>
+    <div class="button-add-container">
+        <button type="button" class="btn btn-success" (click)="openAddEditShipperForm()">Add Shipper</button>
+    </div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of data">
+            <tr>
+                <td>{{item.Id}}</td>
+                <td>{{item.CompanyName}}</td>
+                <td>{{item.Phone}}</td>
+                <td class="button-container">
+                    <button mat-icon-button color="primary" aria-label="Delete Shipper" (click)="openEditForm(item)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button mat-icon-button color="warn" aria-label="Delete Shipper" (click)="openDeleteConfirmationDialog(item.Id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<router-outlet></router-outlet>
